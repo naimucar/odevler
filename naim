@@ -1,0 +1,72 @@
+###############1. odev desen##############################
+desen=input("Sevdiginizin Adini Buyuk Harflerle Giriniz:")
+
+print(""""
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                                              %
+      O  V     O  V                           %
+     L     E  L     E                         %
+      0            V                          %
+        V        O                            %
+           E  L                               %
+                                              %
+""",'\t'*2,desen,"\n",'\t'*2,'_'*len(desen),
+ """
+                                              %
+                           O  V     O  V      %
+                         L     E  L     E     %
+                          0            V      %
+                            V        O        %
+                               E  L           %
+                                              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ """     )
+###############2. odev km-mil ##############################
+km=int(input("Lutfen km yi Giriniz:"))
+mil=km*1.609344 # 1mil 1,609344 km dir
+print(km,'km',mil,"mil'dir")
+###############3. odev vize-final ##############################
+ad=input('Adi ve soyadi: ')
+vize=int(input('vize notunu 100 uzerinden giriniz :'))
+final=int(input('final notunu 100 uzerinden giriniz :'))
+derstk=int(input('derse gelme sayisi 20 uzerinden giriniz :'))
+#vize%30,final%50,ders katilim%20 uzerinden degerlendirildi
+yilsonu=(vize*.3)+(final*0.5)+(100-5*(20-derstk))*0.2
+print('yil sonu notu:',yilsonu)
+kaydet=open("ogrenciNotHesaplama",'a')
+print("ad:",ad,"\nvize:",vize,"\nfinal:",final,"\nDers katilim:",derstk,"\nyil sonu ortalamasi:",yilsonu,file=kaydet)
+kaydet.close()
+###############4. odev faiz  ##############################
+anapara=int(input('ana parayi giriniz :'))
+faiz_sure=int(input('kac yil faize  yatirilacak :'))
+faiz_oran=int(input('faiz oranini giriniz % :'))
+faiz=anapara*faiz_sure*faiz_oran/100
+top=faiz+anapara
+aylik=faiz/12
+gun=faiz/365
+print("faiz :",faiz,"\naylik faiz:",aylik,"\ngunluk faiz:",gun,"\ntoplam para :",top)
+kaydet=open("faizHesaplama",'a')
+print("faiz :",faiz,"\naylik faiz:",aylik,"\ngunluk faiz:",gun,"\ntoplam para :",top,file=kaydet)
+kaydet.close()
+###############5. odev aylik gelir ##############################
+mutfak=int(input('mutfak masrafini giriniz :'))
+egt=int(input('egitim masrafini giriniz  :'))
+gym=int(input('giyim masrafini giriniz  :'))
+ulsm=int(input('ulasim masrafini giriniz  :'))
+maas=int(input('gelirinizi giriniz  :'))
+
+toplam=mutfak+egt+gym+ulsm
+yuzde=toplam/maas*100
+
+print("gelir :",maas,"\ntoplam masraf:",toplam,"\ngelire orani:",yuzde)
+kaydet=open("aylikmasraf",'a')
+print("mutfak :",mutfak,"\negitim masrafi :",egt,"\ngiyim masrafi :",gym,"\nulasim masrafi :",ulsm
+,"\ngeliriniz :",maas,"\ntoplam masraf:",toplam,"\ngelire orani:",yuzde,file=kaydet)
+kaydet.close()
+###############6. odev print ##############################
+print("""Python’un kurucusu Guido Van Rossum, Hollanda’nin Amsterdam’daki
+ "Universiteit Van Amsterdam" okulundan  1982’de mezun olmuştur.""",'\n')
+print('Python\'un kurucusu Guido Van Rossum, Hollanda\'nin Amsterdam\'daki \n "Universiteit Van Amsterdam" okulundan  1982\'de mezun olmuştur.','\n')
+print("Python’un kurucusu Guido Van Rossum, Hollanda’nin Amsterdam’daki \n \"Universiteit Van Amsterdam\" okulundan  1982’de mezun olmuştur.","\n")
+print(r'Python’un kurucusu Guido Van Rossum, Hollanda’nin Amsterdam’daki  "Universiteit Van Amsterdam" okulundan  1982’de mezun olmuştur.')
