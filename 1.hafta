@@ -34,7 +34,7 @@ derstk=int(input('derse gelme sayisi 20 uzerinden giriniz :'))
 #vize%30,final%50,ders katilim%20 uzerinden degerlendirildi
 yilsonu=(vize*.3)+(final*0.5)+(100-5*(20-derstk))*0.2
 print('yil sonu notu:',yilsonu)
-kaydet=open("ogrenciNotHesaplama",'a')
+kaydet=open("ogrenciNotHesaplama.txt",'a')
 print("ad:",ad,"\nvize:",vize,"\nfinal:",final,"\nDers katilim:",derstk,"\nyil sonu ortalamasi:",yilsonu,file=kaydet)
 kaydet.close()
 ###############4. odev faiz  ##############################
@@ -46,7 +46,7 @@ top=faiz+anapara
 aylik=faiz/12
 gun=faiz/365
 print("faiz :",faiz,"\naylik faiz:",aylik,"\ngunluk faiz:",gun,"\ntoplam para :",top)
-kaydet=open("faizHesaplama",'a')
+kaydet=open("faizHesaplama.txt",'a')
 print("faiz :",faiz,"\naylik faiz:",aylik,"\ngunluk faiz:",gun,"\ntoplam para :",top,file=kaydet)
 kaydet.close()
 ###############5. odev aylik gelir ##############################
@@ -60,7 +60,7 @@ toplam=mutfak+egt+gym+ulsm
 yuzde=toplam/maas*100
 
 print("gelir :",maas,"\ntoplam masraf:",toplam,"\ngelire orani:",yuzde)
-kaydet=open("aylikmasraf",'a')
+kaydet=open("aylikmasraf.txt",'a')
 print("mutfak :",mutfak,"\negitim masrafi :",egt,"\ngiyim masrafi :",gym,"\nulasim masrafi :",ulsm
 ,"\ngeliriniz :",maas,"\ntoplam masraf:",toplam,"\ngelire orani:",yuzde,file=kaydet)
 kaydet.close()
