@@ -327,20 +327,26 @@ cikmak icin 'q' ye bas"""'\n')
 paracekme=0
 parayatirma=0
 bakiye=1000
-print("Sayin.......bey hosgeldiniz ")
+print("Sayin N.JANSEN hosgeldiniz ")
+print("""
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$""")
+print("Sayin N.JANSEN hesabinizda ",bakiye,"TL vardir")
+print("""
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$""")
 while True :
 ##########################giris#######################
-    giris=input("\nSayin .... bey Yapmak istediginiz islemi seciniz:"
-                      "\n1 Bakiye sorgulama"
-                      "\n2 Para cekme"
-                      "\n3 Para yatirma "
-                      "\n4 Cikis \n")
+   
+    print("\nLutfen Yapmak istediginiz islemi seciniz"
+           "\n Bakiye sorgulama >>> 1            2 <<< Para Cekme"
+           "\n Para yatirma     >>> 3            4 <<< Cikis")
+
+         
+    giris=input("\nislem no :")
 
 #########################cikis#####################
     if giris=="4" :
         cikis=input("cikmak istediginize eminmisiniz"
-              "\ndevam etmek icin 1"
-               "\ncikis icin       2\n")
+              "\ndevam etmek icin >>> 1             2 <<< cikis \n")
 
 
         if cikis=="1" :
@@ -348,33 +354,53 @@ while True :
             continue
 
         elif  cikis=="2":
-            print("hoscakalin sayin.... bey ")
+            print("Hoscakalin sayin N.JANSEN .......... ")
             break
 
 #######################bakiye##########################    
     if giris=="1" :
+        print("""
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$""")
 
-        print("hesap bakiyeniz :",bakiye,"TL")
+        print("Sayin N.JANSEN hesap bakiyeniz :",bakiye,"TL")
+        print("""
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$""")
         print('lutfen bekleyiniz ana ekrana yonlendiriliyorsunuz....')
+        print("""
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>""")
         continue
 #####################paracekme#########################      
     elif giris=="2" :
-        paracekme=int(input("\ncekmek istediginiz tutari giriniz :\n"))
+        print("""
+>>>>>>>>>>>>>>>>>>>>>>>>>>>""")
+        paracekme=float(input("\ncekmek istediginiz tutari giriniz :"))
         if paracekme>bakiye :
+            print("""
+>>>>>>>>>>>>>>>>>>>>>>>>>>>""")
             print("Bu miktarda cekemezsiniz ana ekrana yonlendiriliyorsunuz lutfen bekleyiniz... ")
             continue
         else :
             bakiye=bakiye-paracekme
+            print("""
+>>>>>>>>>>>>>>>>>>>>>>>>>>>""")
             print("cekilen miktar",paracekme,"TL")
             print("hesap bakiyeniz",bakiye,"TL")
+            print("""
+>>>>>>>>>>>>>>>>>>>>>>>>>>>""")
             print("ana ekrana yonlendiriliyorsunuz lutfen bekleyiniz....")
             continue
 #####################para yatirma#####################         
     elif giris == "3":
-        parayatirma = int(input("\nyatirmak istediginiz tutari giriniz :\n"))
+        print("""
+>>>>>>>>>>>>>>>>>>>>>>>>>>>""")
+        parayatirma = float(input("\nyatirmak istediginiz tutari giriniz :"))
+        print("""
+>>>>>>>>>>>>>>>>>>>>>>>>>>>""")
         print("yatirilan tutar",parayatirma,"TL")
         bakiye=bakiye+parayatirma
         print("hesap bakiyeniz", bakiye, "TL")
+        print("""
+>>>>>>>>>>>>>>>>>>>>>>>>>>>""")
         print("ana ekrana yonlendiriliyorsunuz lutfen bekleyiniz....")
         continue
 ###########################degilse durumu##########################      
