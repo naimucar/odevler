@@ -1,0 +1,383 @@
+#  1--------------------BURC------------------------
+
+w="0123456789"
+print("""BURCUNUZU OGRENMEK ISTERMISINIZ?
+    DOGUM TARIHINIZI
+    GUN
+    AY (ayin ismi veya 3 veya 04 gibi girebilirsiniz)
+    OLARAK GIRINIZ BURCUNUZU OGRENINIZ
+    """)
+#########################GUN VE AY ICIN INPUT AYARLAMALARI##############################
+while True:
+    print("\n************Cikmak icin 'Q'ya basin*************")
+    g = input("\nGUN :")# GUN ICIN INPUT
+    if g=="":  #bos gecilirse veya entere basilirsa tekrar basa donder
+        print('lutfen sayi giriniz')
+        continue
+    if g=="q" or g=="Q" :
+        print("***************cikiliyor.....***************")
+        break
+    if not int(g) in range(32) :
+        print('lutfen 1-31 arasinda sayi giriniz')
+        continue
+
+    a = input("AY  :") # AY ICIN INPUT
+    if a=="":  #bos gecilirse veya entere basilirsa tekrar basa donder
+        print('lutfen ayi giriniz')
+        continue
+#################################BURCLARI TANIMLAMA ####################################
+ #--------------------------------KOC---------------------------------------------------
+    if (0 < int(g) < 21 and (a == "nisan" or a == "NISAN"or a == "4" or a == "04")) or \
+            (20 < int(g) < 32 and (a == "mart" or a == "MART" or a == "3" or a == "03")):
+        print("***********BURCUNUZ KOC***************")
+
+#---------------------------------BOGA---------------------------------------------------
+
+    elif (0 < int(g) < 22 and (a == "mayis" or a == "MAYIS"or a == "5" or a == "05")) or \
+            (20 < int(g) < 31 and (a == "nisan" or a == "NISAN"or a == "4" or a == "04")):
+        print("************BURCUNUZ BOGA**************")
+# ---------------------------------IKIZLER---------------------------------------------------
+    elif (0 < int(g)< 22 and (a == "HAZIRAN" or a == "haziran"or a == "6" or a == "06")) or \
+            (21 < int(g) < 32 and (a == "mayis" or a == "MAYIS"or a == "5" or a == "05")):
+        print("***********BURCUNUZ IKIZLER************")
+# ---------------------------------YENGEC---------------------------------------------------
+
+    elif (0 < int(g)< 24 and (a == "temmuz" or a == "TEMMUZ"or a == "7" or a == "07")) or \
+            (21 < int(g)< 31 and (a == "HAZIRAN" or a == "haziran"or a == "6" or a == "06")):
+        print("***********BURCUNUZ YENGEC*************")
+# ---------------------------------ASLAN---------------------------------------------------
+
+    elif (0 < int(g) < 22 and (a == "AGUSTOS" or a == "agustos"or a == "8" or a == "08")) or \
+            (23 < int(g) < 32 and (a == "temmuz" or a == "TEMMUZ"or a == "7" or a == "07")):
+        print("***********BURCUNUZ ASLAN**************")
+# ---------------------------------BASAK---------------------------------------------------
+
+    elif (0 < int(g) < 24 and (a == "eylul" or a == "EYLUL"or a == "9" or a == "09")) or \
+            (21 <int(g) < 32 and (a == "AGUSTOS" or a == "agustos"or a == "8" or a == "08")):
+        print("***********BURCUNUZ BASAK**************")
+# ---------------------------------TERAZI---------------------------------------------------
+
+    elif (0 < int(g) < 24 and (a == "EKIM" or a == "ekim"or a == "10" or a == "10")) or \
+            (22 < int(g)< 31 and (a == "eylul" or a == "EYLUL"or a == "9" or a == "09")):
+        print("***********BURCUNUZ TERAZI*************")
+# ---------------------------------AKREP---------------------------------------------------
+
+    elif (0 < int(g) < 24 and (a == "KASIM" or a == "kasim"or a == "11" or a == "11")) or \
+            (23< int(g)< 32 and (a == "EKIM" or a == "ekim"or a == "10" or a == "10")):
+        print("***********BURCUNUZ AKREP**************")
+# ---------------------------------YAY---------------------------------------------------
+
+    elif (0 < int(g) < 24 and (a == "ARALIK" or a == "aralik"or a == "12" or a == "12")) or \
+            (23< int(g) < 31 and (a == "KASIM" or a == "kasim"or a == "11" or a == "11")):
+        print("***********BURCUNUZ YAY****************")
+# ---------------------------------OGLAK---------------------------------------------------
+
+    elif (0 < int(g)< 21 and (a == "OCAK" or a == "ocak"or a == "01" or a == "1")) or \
+            (22< int(g) < 32 and (a == "ARALIK" or a == "aralik"or a == "12" or a == "12")):
+        print("***********BURCUNUZ OGLAK**************")
+# ---------------------------------KOVA---------------------------------------------------
+
+    elif (0 < int(g)< 20 and (a == "SUBAT" or a == "subat"or a == "02" or a == "2")) or \
+            (20< int(g) < 32 and (a == "OCAK" or a == "ocak"or a == "01" or a == "1")):
+        print("***********BURCUNUZ KOVA***************")
+# ---------------------------------BALIK---------------------------------------------------
+
+    elif (0 < int(g) < 21 and (a == "MART" or a == "mart"or a == "03" or a == "3")) or \
+            (19< int(g) < 30 and (a == "SUBAT" or a == "subat"or a == "02" or a == "2")):
+        print("***********BURCUNUZ BALIK**************")
+
+
+    else :
+        print("Lutfen girdiginiz GUN ve AY degerlerini konrtol edip tekrar deneyiniz.....")
+        
+#2-------------------------------------KM-MIL DONUSUM PROGRAMI----------------------
+
+while True:
+     
+     ##############SECME INPUTU########################
+     secim=input("\nKM - MIL donusumu icin: K\n"
+                    "MIL - KM donusumu icin: M"
+                    "\ncikis icin            : Q "
+                    "\nbasiniz               : " )
+     if secim=="q" or secim=="Q" :
+          print("kapaniyor....")
+          break
+     
+     ####################KM-MIL########################m
+     elif secim=="k" or secim=="K" :
+          
+          ###########KM INPUTU########
+          uzunluk_km=float(input("uzunlugu KM giriniz :"))
+                         
+          sayi=uzunluk_km*0.62           #1km=0.62 mil
+          print(uzunluk_km,"KM",sayi,"MIL eder" )
+          
+     ####################MIL-KM########################     
+     elif secim=="m" or secim=="M" :
+          
+          ############MIL INPUTU#######
+          uzunluk_mil=float(input("uzunlugu MIL giriniz :"))
+          sayi=uzunluk_mil*1.61           #1mil=1.61 km
+          print(uzunluk_mil,"MIL",sayi," KM eder")
+
+          
+     else :
+          print("\nlutfen dogru secimi yapiniz")
+          
+#3A-----------------------------------EN AZ BIR RAKAM BIR K.HARF BIR B.HARF PAROLA OLUSTURMA--------------------
+
+print("""
+lutfen parola olusturuken enaz
+    1 buyuk harf
+    1 kucuk harf
+    1 rakam  
+    giriniz""")
+while True:
+   ########## KONTROL DEGISKENLERI ###############
+    kontrol_x = 0
+    kontrol_y = 0
+    kontrol_z = 0
+    n = 0
+   ############## KARAKTER TANIMLAMALARI ################ 
+    rakam  = "1234567890"
+    k_harf = "qwertyuiopasdfghjklzxcvbnm"
+    b_harf = "QWERTYUIOPLKJHGFDSAZXCVBNM"
+    
+    ################ GIRIS INPUTU ############################
+    a = input("""cikis icin  : "q"      
+yeni parola :""")
+    d = len(a) #girilen parolanin uzunlugu
+    
+    ################ CIKIS #################
+    
+    if a=="q" :
+        print("\ncikilkiyor.........")
+        break
+    ############## KOSULLAR ###################
+    if not 6 < len(a) < 13:
+        print("lutfen 6-12 karakterli parola olusturunuz\n")
+        continue
+    ###############! BURAYA DIKKAT ! ###############################################  
+    for i in a:                #i input(a) nin icerisini konrol eder   
+        n += len(i)            #len(i) her seferde 1 karakteri dolasirken 'n' degeri
+                               #bir artacak taki inputa girilen karakter kadar
+
+        ############# EN AZ BIR KARAKTER KONTROLU#############
+
+        if kontrol_x < 1:      # baslangicda x=0 oldugu icin 
+                               #eger i degeri b_harf icerisini
+            if (i in b_harf):  #kontrol eder varsa kontrol_x=1 
+                               #olur ve if kosuluna girmez
+                kontrol_x += 1
+           
+        # _________________________________________________________________________  
+        if kontrol_y < 1:      # baslangicda kontrol_y=0 oldugu
+                               #icin eger i degeri k_harf icerisini
+             if (i in k_harf): #kontrol eder varsa kontrol_y=1
+                               #olur ve if kosuluna girmez
+                 kontrol_y  += 1           
+        # _____________________________________________________________________________  
+        if kontrol_z < 1:     # baslangicda kontrol_z=0
+                              #oldugu icin eger i degeri k_harf icerisini
+                              #kontrol eder varsa kontrol_z=1
+                              #olur ve if kosuluna girmez
+            if (i in rakam  ):
+                
+                kontrol_z+= 1
+        # _______________________________________________________________________________      
+        if n == d and (kontrol_x == kontrol_y  == kontrol_z == 1):
+            print("parolaniz kaydediliyor.......\n")
+
+
+            break
+        else:
+            if n == d and (kontrol_x != 1 or kontrol_y  != 1 or kontrol_z != 1):
+                print("Lutfen buyuk harf Kucuk harf ve rakam",
+                      "\ngirdiginizden emin olun\n")
+                      
+#3B----------------------------KULLANICI ADI VE PAROLA BELIRLEME---------------------------------------
+
+rakamlar= "1234567890"
+kontrol= 0
+print("""KULLANICI ADI ICIN ""RAKAM"" GIRMEYINIZ VE 3-18 KARAKTER OLMASINA DIKKAT EDINIZ.
+
+PAROLA  6-12 KARAKTER OLMASINA DIKKAT EDINIZ
+CIKIS ICIN "Q" YA BASIN """)
+################ KULLANICI GIRIS #################################33
+while True:
+
+    kulllanici_adi = input("\n Kullanici Adi "
+                         "\n(cikis icin 'q') :")
+
+    if kulllanici_adi=="q" or kulllanici_adi=="Q" :
+        print("programdan cikiliyor......")
+        break
+
+################### KARAKTER SAYISI KONTROLU ######################
+    if not 2 < len( kulllanici_adi) < 19:
+        print("\nHata: Kullanici adi 3-18 karakter olmali")
+        continue
+################### RAKAM KONTROL #################################
+    for x in rakamlar:
+        if x in  kulllanici_adi:
+            print("\nHata: Rakam olmamali")
+            kontrol = 1
+            break
+    if kontrol == 1:
+        kontrol = 0
+        continue
+##########################################################
+
+    else:
+        print("kullanici adini basariyla girdiniz")
+
+#################### PAROLA BOLUMU ##########################
+    while True:
+        parola = input("\nPAROLANIZI OLUSTURUNUZ"
+                       "\ncikis icin 'q' :")
+
+################PROGRAMDAN CIKIS##########################
+        if parola == "q" or parola == "Q":
+            print("programdan cikiliyor......")
+            quit()
+
+################## PAROLA SAYISI KONTROLU ###################
+
+        if not 5 < len(parola) < 13:
+            print("\nHata: Parola 6-12 karakter olmali")
+            continue
+###########################################################
+        else:
+            print("Parolaniz kaydediliyor....")
+            break
+############### PRINT VE DOSYA ISLEMLERI #####################
+    while True:
+        print("\nKULLANICI ADI :",  kulllanici_adi,
+              "\nPAROLA :", parola)
+        kaydet = open("kaydet.txt", "w")
+        print("KULLANICI ADI :",  kulllanici_adi,
+              "\nPAROLA :", parola, file=kaydet)
+        kaydet.close()
+        break
+        
+#4----------------------------TAHMIN OYUNU ---------------------------------------
+
+f=0
+while True:
+    ################# TAHMIN SAYISI HAZIRLAMA ##############3
+    karma=input('\n'"""TAHMIN SAYISI OLUSTURMAK ICIN CANIN NE ISTIYORSA YAZ KARDESIM
+cikmak icin 'q' ye bas """'\n')
+     
+    if karma == "q" or karma == "Q":
+        print("...............Game Over..........")
+        break
+    ################ KARMA YAPMA ###########
+    i=0
+    s=len(karma)
+        
+    f+=1
+    if f==1 :
+        tahmin_olunan=(s**21)%10
+        print("a",tahmin_olunan)
+    if f==2 :
+       tahmin_olunan=(s+77)%10
+       
+    if f==3 :
+       tahmin_olunan=(s*59)%10
+       f=0
+    print("x",tahmin_olunan)
+    ################### OYUNA GIRIS ################# 
+    print("\n-------------SAYIYI TAHMIN OYUNU--------------\n")
+    secim = input("""_________HAZIRLANIYOR_________________
+
+BASLAMAK ICIN LUTFEN "B" YE BASIN
+cikmak icin 'q' ye bas"""'\n')
+    
+    if secim == "q" or secim == "Q":
+        print("...............Game Over..............")
+        break
+    
+    if secim == "B" or secim == "b":
+    ################ TAHMIN KOSULLARI #############    
+        while True:
+            tahmin_edilen = input("\ntahmininizi giriniz:")
+            i += 1
+          
+            if i == 1 and tahmin_edilen == str(tahmin_olunan):
+                print("\n.............tebrikler *** kazandiniz...........",i,".tahmin")
+                i = 0
+                break
+            elif 1 < i < 4 and tahmin_edilen == str(tahmin_olunan):
+                print("\n..............tebrikler ** kazandiniz...........",i,".tahmin")
+                i = 0
+                break
+            elif 3 < i < 6 and tahmin_edilen == str(tahmin_olunan):
+
+                print("\n.........tebrikler * kazandiniz.......",i,".tahmin")
+                i = 0
+                break
+            elif i > 5:
+                i = 0
+                print("uzgunum bilemediniz dogru cevap", tahmin_olunan)
+                break
+    else:
+        print("________B veya Q ya basiniz______________\n")
+        
+#5---------------------ATM PROGRAMI-------------------------------------------
+paracekme=0
+parayatirma=0
+bakiye=1000
+print("Sayin.......bey hosgeldiniz ")
+while True :
+##########################giris#######################
+    giris=input("\nSayin .... bey Yapmak istediginiz islemi seciniz:"
+                      "\n1 Bakiye sorgulama"
+                      "\n2 Para cekme"
+                      "\n3 Para yatirma "
+                      "\n4 Cikis \n")
+
+#########################cikis#####################
+    if giris=="4" :
+        cikis=input("cikmak istediginize eminmisiniz"
+              "\ndevam etmek icin 1"
+               "\ncikis icin       2\n")
+
+
+        if cikis=="1" :
+            print("ana ekrana yonlendiriliyorsunuz lutfen bekleyiniz....")
+            continue
+
+        elif  cikis=="2":
+            print("hoscakalin sayin.... bey ")
+            break
+
+#######################bakiye##########################    
+    if giris=="1" :
+
+        print("hesap bakiyeniz :",bakiye,"TL")
+        print('lutfen bekleyiniz ana ekrana yonlendiriliyorsunuz....')
+        continue
+#####################paracekme#########################      
+    elif giris=="2" :
+        paracekme=int(input("\ncekmek istediginiz tutari giriniz :\n"))
+        if paracekme>bakiye :
+            print("Bu miktarda cekemezsiniz ana ekrana yonlendiriliyorsunuz lutfen bekleyiniz... ")
+            continue
+        else :
+            bakiye=bakiye-paracekme
+            print("cekilen miktar",paracekme,"TL")
+            print("hesap bakiyeniz",bakiye,"TL")
+            print("ana ekrana yonlendiriliyorsunuz lutfen bekleyiniz....")
+            continue
+#####################para yatirma#####################         
+    elif giris == "3":
+        parayatirma = int(input("\nyatirmak istediginiz tutari giriniz :\n"))
+        print("yatirilan tutar",parayatirma,"TL")
+        bakiye=bakiye+parayatirma
+        print("hesap bakiyeniz", bakiye, "TL")
+        print("ana ekrana yonlendiriliyorsunuz lutfen bekleyiniz....")
+        continue
+###########################degilse durumu##########################      
+    else:
+        print("yanlis tusa bastiniz lutfen tekrar deneyiniz")
+        pass
