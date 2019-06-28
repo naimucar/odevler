@@ -278,7 +278,7 @@ cikmak icin 'q' ye bas """'\n')
     f+=1
     if f==1 :
         tahmin_olunan=(s**21)%10
-        print("a",tahmin_olunan)
+       # print("a",tahmin_olunan)
     if f==2 :
        tahmin_olunan=(s+77)%10
        
