@@ -285,7 +285,7 @@ cikmak icin 'q' ye bas """'\n')
     if f==3 :
        tahmin_olunan=(s*59)%10
        f=0
-    print("x",tahmin_olunan)
+    #print("x",tahmin_olunan)
     ################### OYUNA GIRIS ################# 
     print("\n-------------SAYIYI TAHMIN OYUNU--------------\n")
     secim = input("""_________HAZIRLANIYOR_________________
