@@ -4,7 +4,11 @@
 
 while True:
 
-    print("\n","""LUTFEN YENI KULLANICI ADI VE PAROLANIZI BELIRLEYINIZ
+    print("\n","""
+####################################################
+# LUTFEN HESAP OLUSTURMAK ICIN                     #
+# YENI KULLANICI ADI VE PAROLANIZI BELIRLEYINIZ    #
+####################################################
  cikis icin : Q""")
     with open("okuma.txt", "a") as okuma:
 
@@ -31,7 +35,11 @@ while True:
     ############### Kaydetme ###################################
     with open("kaydet.txt", "a") as kayit:
        print("kullanici adiniz ve parolaniz kaydediliyor......")
+       print("hesabiniz basariyla olusturuldu.")
        print("kullanici adiniz:",kul_adi,"\nparola :",parola,file=kayit)
+
+         
+
 
          
 
