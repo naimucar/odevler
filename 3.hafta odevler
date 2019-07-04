@@ -1,0 +1,299 @@
+------------------------------------------KULLANICI ADI ----------------------------------------
+
+
+
+while True:
+    with open("okuma.txt", "a") as okuma:
+
+        
+        kul_adi=input("\ncikis icin    :Q" 
+                      "\n-------------->kullanici adi :")
+
+        if kul_adi=='Q' or kul_adi=='q':
+            print("cikiliyor......")
+            break
+    ############### okuma karsilastirma ######################
+    
+    with open("okuma.txt", "r") as okuma:
+        icerik=okuma.read()
+        if  kul_adi in icerik:
+            print("hata : kullanici adiniz daha once kullanilmistir.."
+                  "\nlutfen kullanici adini degistir")
+            continue
+        else:
+   #---------------kullanici adi icin ayri bir dosya olusturuyoruz------         
+            with open("okuma.txt", "a") as okuma:
+              print("kullanici adi:",kul_adi,file=okuma)
+              
+    parola=input("-------------->parola        :")
+    ############### Kaydetme ###################################
+    with open("kaydet.txt", "a") as kayit:
+       print("kullanici adiniz ve parolaniz kaydediliyor......")
+       print("kullanici adiniz:",kul_adi,"\nparola :",parola,file=kayit)
+
+         
+
+
+
+-----------------------------------100 TAHMIN OYUNU-------------------------------------
+
+
+f=0
+while True:
+    ################# TAHMIN SAYISI HAZIRLAMA ##############3
+    karma=input('\n'"""TAHMIN SAYISI OLUSTURMAK ICIN HERHANGI SAYI CUMLE DIZIN HARF GIREBILIRSINIZ
+cikmak icin 'q' ye bas """'\n')
+     
+    if karma == "q" or karma == "Q":
+        print("...............Game Over..........")
+        break
+    ################ KARMA YAPMA ###########
+    i=0
+    s=len(karma)
+        
+    f+=1
+    if f==1 :
+        tah_sayi=(s**121+99)%100
+       
+    if f==2 :
+       tah_sayi=(s+777)%100
+       
+    if f==3 :
+       tah_sayi=(s*23+1764583)%100
+       
+    if f==4 :
+       tah_sayi=(s*119**3)%100
+
+    if f==5 :
+       tah_sayi=(s*9999+38653435637267327)%100
+       f=0  
+    #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>     
+     
+    while True:
+        try:
+            #print(tahmin_olunan)
+            
+            tahmin = int(input("\ntahmininizi giriniz:"))
+            i += 1
+           
+            if tahmin>100 :
+                print("lutfen 0-100 arasi sayi giriniz")
+
+
+            if tahmin==tah_sayi :
+                print("\n>>>>>>>>TEBRIKLER ",i,". TAHMINDE KAZANDINIZ")
+                i = 0
+                break
+            elif tahmin in range((tah_sayi-10),(tah_sayi+11)):
+
+                
+                 if  tahmin in range((tah_sayi-10),(tah_sayi)):
+                        print("Tahmininize cok yaklastiniz lutfen az daha yukari")
+                      
+                 elif   tahmin in range((tah_sayi+1),(tah_sayi+11)):
+                      print("Tahmininize cok yaklastiniz lutfen az daha asagi")
+                      
+            elif tahmin in range((tah_sayi-20),(tah_sayi-10)) or  tahmin in range((tah_sayi+11),(tah_sayi+21)):
+
+                
+                 if  tahmin in range((tah_sayi-20),(tah_sayi-10)):
+                        print("Tahmininizden uzaklasiyorsunuz yukari cikmalisin")
+                      
+                 elif   tahmin in range((tah_sayi+11),(tah_sayi+21)):
+                      print("Tahmininizden uzaklasiyorsunuz asagi inmelisin")
+
+                      
+            elif tahmin in range((tah_sayi-20)) or  tahmin in range((tah_sayi+21),100):
+
+                
+                 if  tahmin in range((tah_sayi-20)):
+                        print("Tahmininizden cok uzaktasiniz yukari cikmalisin")
+                      
+                 elif   tahmin in range((tah_sayi+21),100):
+                      print("Tahmininizden cok uzaktasiniz asagi inmelisin")
+        except :
+            print('rakam giriniz')
+           
+------------------------------------ALAN HACIM-----------------------------------------------
+
+
+while True:
+#-------------------------------input ayarlamalari-----------------
+    secim = input("\n""""              LUTFEN YAPMAK ISTEDIGINIZ ISLEMI SECINIZ:
+
+ALAN HESAPLAMALARI  : A                        H :HACIM HESAPLAMALARI
+
+CIKIS               : Q
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>:""" )
+    
+    if secim == 'q' or secim == 'Q':
+        print('..........cikiliyor......')
+        break
+
+    elif secim == 'A' or secim == 'a':
+
+        alan = input("""-------------------ALAN HESAPLAMALARI----------------------
+
+>>>>>>>>>UCGEN       (1)              (2) KARE<<<<<<<<<<
+
+>>>>>>>>>DIKDORTGEN  (3)
+
+-----------------------------------------------------------"""'\n :')
+#======================== Alan islem ayarlamalari==============================
+        if alan == '1':
+            print("UCGENIN ALANI= TABAN KENARI X YUKSEKLIK /2 \n")
+            
+            try:
+                ucgen_taban = float(input("TABAN KENAR UZUNLUGU GIRINIZ :"))
+                ucgen_yukseklik = float(input("YUKSEKLIGI GIRINIZ :"))
+                ucgenin_alani = ucgen_taban * ucgen_yukseklik / 2
+                print("taban kenar uzunlugu ",  ucgen_taban, "ve yuksekligi ",  ucgen_yukseklik,
+                      'olan ucgenin alani :',ucgenin_alani)
+            except:
+                print('sayi giriniz')
+
+        elif alan == '2':
+            print("KARENIN ALANI=(BIR KENAR UZUNLUGU)**2\n")
+            try:
+                kare = float(input("BIR KENAR UZUNLUGU GIRINIZ :"))
+                karenin_alani = kare ** 2
+                print("kenar uzunlugu ", kare, " olan karenin alani :"
+                                               "", karenin_alani)
+            except:
+                 print('sayi giriniz')
+
+        
+        elif alan == '3':
+            print("DIKDORTGENIN ALANI=KISA KENAR X UZUN KENAR\n")
+            try:
+            
+                dikdortgen_a = float(input("UZUN KENAR UZUNLUGU GIRINIZ :"))
+                dikdortgen_b = float(input("KISA KENAR UZUNLUGU GIRINIZ :"))
+                dortgenin_alani = dikdortgen_a*dikdortgen_b
+                print("uzun kenar uzunlugu ", dikdortgen_a," kisa kenar uzunlugu ",dikdortgen_b,
+                      "olan dikdortgenin alani :",dortgenin_alani)
+            except:
+                print('sayi giriniz')
+                
+        else:
+            print("\nyanlis giris yaptiniz tekrar deneyiniz")
+            
+        
+#======================== hacim input ve  islem ayarlamalari==============================
+                  
+            
+    elif secim == 'H' or secim == 'h':
+
+        hacim=(input("""-------------------HACIM HESAPLAMALARI----------------------
+
+>>>>>>>>>KUP        (1)              (2) KURE<<<<<<<<<<
+
+>>>>>>>>>KONI       (3)
+
+-----------------------------------------------------------"""'\n :'))
+
+        if hacim=='1':
+            print("KUPUN HACMI=(BIR KENAR UZUNLUGU)**3\n ")
+            try:
+
+                kup=float(input("BIR KENAR UZUNLUGU GIRINIZ:"))
+                kup_hacim=kup**3
+                print("kenar uzunlugu ", kup, " olan kupun hacmi :"
+                                               "", kup_hacim)
+            except:
+                 print('sayi giriniz')
+            
+        elif hacim == '2':
+            print("KURENIN HACMI=4/3 X π X YARICAP**3 \n")
+            try:
+            
+                kure = float(input("CAPI GIRINIZ :"))
+                kure_hacim=4/3*3.14159265359*((kure/2)**3)
+                
+                print("capi ",kure, "olan kurenin hacmi",kure_hacim)
+            except:
+                print('sayi giriniz')
+
+        elif hacim == '3':
+            print("KONININ HACMI=1/3 X π X YARICAP**2 X YUKSEKLIK\n")
+            try:
+                koni_r = float(input("CAPI GIRINIZ :"))
+                koni_h = float(input("YUKSEKLIGI GIRINIZ :"))
+                
+                koni_hacim=1/3*3.14159265359*((koni_r/2)**2)* koni_h
+                
+                print("capi ",koni_r , "olan ve yuksekligi ", koni_h,"olan koninin hacmi :", koni_hacim)
+            except:
+                print('sayi giriniz')
+        else:
+            print("\nyanlis giris yaptiniz tekrar deneyiniz")
+            
+        
+       
+
+    else:
+        print("\nyanlis giris yaptiniz tekrar deneyiniz")
+        
+
+-------------------------------------ASAL SAYI-------------------------------------------
+
+
+
+while True:
+    try:
+        print("""
+[=========================================================================]
+[  ASAL SAYI KENDISINDEN VE 1 DEN BASKA ORTAK BOLENI OLMAYAN SAYILARDIR.  ]
+[  BIR SAYI  KENDINDEN ONCEKI SAYILARA BOLUNUR VE SIFIR KALANINI VERMEZ   ]
+[  ISE O SAYI ASALDIR DENiR.                                    CIKIS:Q                ]
+[=========================================================================]
+""")
+  #-----------------INPUT ALMA VE TANIMA UYGUN DONGU BOLUMU--------------      
+        sayi=input("\nBir sayı giriniz: ")
+
+        if sayi=="q" or sayi=="Q":
+            print("------------Programdan Cikiliyor.....----------")
+            break
+
+        asal=0
+        for onceki_sayilar in range(2,int(sayi)):
+
+            if(int(sayi)%onceki_sayilar==0):
+                asal=1
+                break
+   #----------------DONGU DISINA CIKARMA (ONEMLI)-----------------------      
+        if asal==1:
+            print("\n_____________Bu sayi Asal DEGILDIR_____________\n")
+            asal=0
+            continue
+        else:
+            print("\n_____________SAYI ASALDIR_____________\n")   
+    except:
+       print('Lutfen rakam giriniz')
+
+
+-------------------------------FIZZ BUZZ---------------------------------------------------
+
+
+while True :
+    try:
+
+        for i in range(101)  :
+
+            if i%5==0 and i%3==0 :
+                print("FIZZ BUZZ")    
+            elif i%3==0 :
+                print("FIZZ")
+            elif i%5==0:
+                print("BUZZ")
+            
+               
+            else:
+                print(i)
+        break
+    except:
+        print("hatali dongu")
+
+
+
+-----------------------------------------------
