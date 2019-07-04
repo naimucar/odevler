@@ -1,0 +1,51 @@
+while True:
+    try:
+         
+        with open("futbolcular.txt","r") as dosya:
+        
+                       
+    
+    #--------------- tek tek satirlari kontrol etme dongusu -----------------
+            kontrol = 0
+            for line in dosya:
+                                                   
+                kontrol+= 1
+    #------------------- takimlara ayirma --------------------------------
+                if kontrol >0:
+                    if 'Fenerbahçe' in line:
+                        with open("Fenerbahce.txt","a") as kanarya:
+                            print(line,file=kanarya)
+                          
+                    elif "Galatasaray" in line:
+                        with open("Galatasaray.txt","a") as cimbom:
+                           print(line,file=cimbom)
+                       
+                    elif 'Besiktas' in line :
+                        with open("Besiktas.txt","a") as kartal:
+                           print(line,file=kartal)
+    except:
+        print("kaynak dosya bulunamadi")
+        break                      
+#-----------------------dosyalari okutma-----------------------
+    with open("Fenerbahce.txt","r") as sari_l:
+            print(sari_l.read(),"\n-------------------------------------------------")
+            with open("Galatasaray.txt","r") as sari_k:
+                print(sari_k.read(),"\n------------------------------------------")
+                with open("Besiktas.txt","r") as siyah_b:
+                    print(siyah_b.read())
+                    break
+                    
+
+#------------------ BURASI FANTAZI futbolculari bir kere yazmasi icin -----------------------------                    
+##                    with open("Fenerbahce.txt","w") as sari_l:
+##                        sari_l.write("")
+##                        with open("Galatasaray.txt","w") as sari_k:
+##                            sari_k.write("")
+##                            with open("Besiktas.txt","w") as siyah_b:
+##                                siyah_b.write("")
+##                                break
+##              
+
+    
+
+
