@@ -252,6 +252,8 @@ CIKIS               : Q
 
 
 
+
+
 while True:
     try:
         print("""
@@ -267,10 +269,15 @@ while True:
         if sayi=="q" or sayi=="Q":
             print("------------Programdan Cikiliyor.....----------")
             break
+        if int(sayi)<0 :
+                print('lutfen pozitif tam sayi giriniz')
+                continue
+
 
         asal=0
         for onceki_sayilar in range(2,int(sayi)):
-
+            
+           
             if(int(sayi)%onceki_sayilar==0):
                 asal=1
                 break
@@ -283,6 +290,7 @@ while True:
             print("\n_____________SAYI ASALDIR_____________\n")   
     except:
        print('Lutfen rakam giriniz')
+
 
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>FIZZ BUZZ <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
