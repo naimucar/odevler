@@ -2,6 +2,9 @@
 
 
 
+
+
+
 while True:
 
     print("\n","""
@@ -22,14 +25,18 @@ while True:
     
     with open("okuma.txt", "r") as okuma:
         icerik=okuma.read()
-        if  kul_adi in icerik:
-            print("hata : kullanici adiniz daha once kullanilmistir.."
+
+        
+        if  '#'+kul_adi+"#" in icerik :
+        #    print(kul_adi,icerik)
+            print("!!!!!!!!!!hata : kullanici adiniz daha once kullanilmistir!!!!!!"
                   "\nlutfen kullanici adini degistir")
             continue
         else:
    #---------------kullanici adi icin ayri bir dosya olusturuyoruz------         
             with open("okuma.txt", "a") as okuma:
-              print("kullanici adi:",kul_adi,file=okuma)
+                
+                print("kullanici adi:",'#'+kul_adi+"#",file=okuma)
               
     parola=input("-------------->parola        :")
     ############### Kaydetme ###################################
@@ -37,6 +44,9 @@ while True:
        print("kullanici adiniz ve parolaniz kaydediliyor......")
        print("hesabiniz basariyla olusturuldu.")
        print("kullanici adiniz:",kul_adi,"\nparola :",parola,file=kayit)
+
+         
+
 
          
 
