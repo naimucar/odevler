@@ -1,0 +1,190 @@
+
+-----------------KARAKTER BÜYÜTME KÜÇÜLTME-------------------------
+
+while True:
+     print("""
+
+|XXXXXXXXXXXlllllllllllllllllllllkkkkkkkkkkkkkkkkkkkk|
+|                                                    |
+|              GAMES OF KARAKTER                     |
+| BÜYÜK HARF                         [1]             |
+| küçük harf                         [2]             |
+| küçük---->BÜYÜK = BÜYÜK---->küçük  [3]             |
+| İlk Harfleri BÜYÜK Yapma           [4]             |
+| İlk harfi BÜYÜK Yapma              [5]             |
+| cıkıs                              [Q]             |
+|                                                    | 
+|                                                    |
+|zzzzzzzzzzzFFFFFFFFFFFfffffffffffffffffffffffSSSSSSS| 
+""")
+
+     kelime=input("KeLiMe giRiNiz:")
+     if kelime=="q" or kelime=="Q":
+          print("cıkılıyor.....")
+          break
+     
+     secim=input("seçiminizi yapınız:")
+
+     if secim=="q" or secim=="Q":
+          print("cıkılıyor.....")
+          break
+     
+     elif secim=='1':
+          
+          yazdir=kelime.upper()   #büyük harf yapma
+          print(yazdir)
+     elif secim=="2":
+          
+          yazdir=kelime.lower()   #kücük harf yapma
+          print(yazdir)
+          
+     elif secim=="3":
+          
+          yazdir=kelime.swapcase() #büyük kücük harf yapma
+          print(yazdir)
+     elif secim=="4":
+          yazdir=kelime.title()   #kelimelerin ilk harf büyük harf yapma
+          print(yazdir)
+     elif secim=="5":
+          yazdir=kelime.capitalize() #ilk harf büyük harf yapma
+          print(yazdir)
+----------------------------RAKAM AYIRACI-----------------------------------
+
+while True:
+    print('\n'"""Rakam ayirt edici ve toplayici program.
+herhangi birseyler yazin program sizin icin sayilari ayirsin ve toplasin.
+cikis=Q""")
+    toplam=0
+    rakam=input("\nBir seyler giriniz:")
+
+    if rakam=='Q' or rakam=='q':
+        print('cikiliyor....')
+        break
+
+    print('TOPLAM = ',end="")
+    for i in rakam:
+
+        if i.isdigit():
+
+            sayilar=int(i)
+            print(sayilar,end="+")
+            toplam+=sayilar
+            
+
+            
+    print("0 =",toplam)
+
+
+-----------------KARAKTER AYIRIP SAYAN PROGRAM------------------------------
+           
+
+
+
+while True:
+        print('\n'"""
+************************************************************************
+*                  Yazilan kelime yada cumleden                        *  
+* -küçük harf                                                          *
+* -BÜYÜK HARF                                                          *
+* -RAKAM                                                               *
+* -KARAKTER                                                            *
+* ayiran ve sayan program                                              * 
+*                                                             cikis=Q  *
+************************************************************************
+
+
+
+
+
+""")
+    
+        k_sayac=0  #kucuk harf sayaci
+        r_sayac=0  #rakam sayaci
+        b_sayac=0  #buyuk harf sayaci
+        o_sayac=0  #karakter sayaci
+        k_harf=""  #kucuk harfleri yazdirma
+        karakter=""#karakter yazdirma
+        rakam=""   #rakam yazdirma
+        b_harf=""  #buyuk harfleri yazdirma
+        a=input("\nLütfen saydırmak istediğiniz kelime yada cümleyi giriniz\n"
+                "--->:")
+
+        if a=="q" or a=="Q" :
+            print("cikiliyor....")
+            break
+##    rakam,kucuk harf,buyuk harf,karakter ayirma 
+        for i in a:
+            
+           if i.islower(): #kucuk harf dongusu
+               k_harf+=i
+           
+               k_sayac+=1
+             
+           elif  i.isupper(): #buyuk harf dongusu
+               b_harf+=i    
+             
+               b_sayac+=1
+             
+           elif i.isdigit():   #rakam dongusu
+               rakam+=i    
+              
+               r_sayac+=1
+         
+           else :
+               karakter+=i    #karakter dongusu
+              
+               o_sayac+=1
+        
+        
+##       karakter ve syilariyla birlikte yazdirma      
+        print("\nküçük harf sayısı('{}')  ---------------------->:{}"
+              "\nbüyük harf sayısı('{}')  ---------------------->:{}"
+              "\nrakam sayısı('{}')       ---------------------->:{}"
+              "\nkarakter sayısı({})      ---------------------->:{}"
+              .format(k_harf, k_sayac, b_harf,b_sayac,rakam,r_sayac,karakter ,o_sayac))
+        continue
+    
+
+
+-----------------TÜRKÇE KARAKTER DEĞİŞTİREN PROGRAM----------------
+
+kaynak = "şçöğüıŞÇÖĞÜİ"""
+hedef  = "scoguiSCOGUI"
+tablo= str.maketrans(kaynak, hedef)
+
+while True:
+     
+
+     with open("futbolcular.txt","r",encoding="cp1254") as dosya:
+
+         for i in dosya:
+             
+             kayit=i.translate(tablo)
+            
+             with open("futbol2.txt" ,'a')as sesli:
+                                     
+                    print(kayit,file=sesli)
+                    print('\nilk hali :',i,"\nson hali :",kayit,"\n","_"*50)
+    
+         break   
+
+--------------------------BAŞ HARF ILE FUTBOLCU AYIRMA--------------------------
+
+
+while True:
+     
+          with open("futbolcular.txt","r",encoding="cp1254") as dosya:
+
+                for i in dosya:
+         
+         #sesli harfle baslayanlari secme dongusu
+                   if ( i.startswith('A') or i.startswith("E")or i.startswith("I") or i.startswith("İ") or
+                       i.startswith("O")or i.startswith("Ö") or  i.startswith("U") or  i.startswith("Ü")):
+         # sesli harfle baslayanlari unlufutbolcu.txt dosyasina kaydetme 
+                       with open("unlufutbolcu.txt" ,'a',encoding="cp1254")as sesli:
+                           sesli.write(i)
+                           print(i)
+              
+                break
+      
+
