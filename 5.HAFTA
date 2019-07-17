@@ -1,0 +1,493 @@
+#*****************************************************************************
+#                        5.HAFTA ODEVLERI                                    *
+#*****************************************************************************
+# 1 ================================GOREV LISTE==============================
+
+yapilacak_list=[]
+yapilan_list=[]
+
+
+while True:
+    
+    print('_____________________________YAPILAN GOREVLER_________________________________\n')
+#------------------------YAPILAN GOREV CIKTISI---------------------------------
+    x=0   
+    for bak in yapilan_list:
+        x+=1
+            
+        print('{}.{}'.format(x,bak))
+    
+    if yapilacak_list==[]:
+        print("\n---------------------BUGUN YAPILACAK IS YOK OZGURSUN---------------------\n")
+    else:
+#------------------------YAPILACAK GOREV CIKTISI---------------------------------
+
+        i=0
+        print('_____________________________YAPILACAK GOREVLER_________________________________')
+        for goster in yapilacak_list:
+            i+=1
+            
+            print('{}.{}'.format(i,goster))
+            
+        
+    #----------------------SECIM------------------------------      
+            
+    print("""
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+GOREV EKLEME           ................>1              >
+GOREV SILME            ................>2              < 
+TAMAMLANMIS GOREVLER   ................>3              >
+TUM GOREVLERI SILME    ................>D      CIKIS=Q <
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+""")
+    secim=input("secim----------------->:")
+    if secim=='q' or secim=='Q':
+        print('cikiliyorr')
+        break
+
+    elif secim=='1':   #GOREV EKLEME
+        ekle=input('LUTFEN YAPACAGINIZ GOREVI GIRINIZ--->>:')
+        yapilacak_list.append(ekle)
+        
+
+    elif secim=='2' :   #SILME
+        i=0
+        for goster in yapilacak_list:
+            i+=1
+            print('{}.{}'.format(i,goster))
+
+        try:
+            silme=int(input("SILMEK ISTEDIGINIZ GOREVI SECINIZ :"))
+            silme-=1
+            
+            if  silme<0 or silme>=len(yapilacak_list):
+                print('lutfen secenekteki degerlerden birini giriniz...')
+                continue
+            else:
+                               
+                del yapilacak_list[silme]
+                continue
+        except:
+            print('lutfen araliktaki sayiyi giriniz')
+
+    elif secim=='3' :#GOREV AKTARMA
+        i=0
+        for goster in yapilacak_list:
+            i+=1
+            print('{}.{}'.format(i,goster))
+        try:    
+            aktarma=int(input("AKTARMAK ISTEDIGINIZ GOREVI SECINIZ :"))
+            aktarma-=1
+            if  aktarma<0 or aktarma>=len(yapilacak_list):
+                print('lutfen secenekteki degerlerden birini giriniz...')
+                continue
+            else:
+                alpop=[yapilacak_list.pop(aktarma)]
+                yapilan_list+=alpop
+                
+                
+                continue
+        except:
+            print('lutfen araliktaki sayiyi giriniz')
+
+    elif secim=='d' or secim=='D' :  #TUM GOREVLERI SILME   
+        yapilacak_list.clear()
+        print('TUM GOREVLER SILINIYOR.....')
+                
+
+        
+    else :
+         print('lutfen seciminizi kontrol ediniz\n')
+            
+# 2 ===============================ADAM ASMA========================================
+
+#adam asma resimleri ayarlama kodlada yazilabilirdi kolaya kacildi (:
+resim_0 = [[ "___________ "],
+         [ "|","   ","|"],
+         [ "|","   ","|"],
+         [ "|","   ","O"],
+         [ "|","  /","|","\\"],
+         [ "|","   ","|",],
+         [ "|","  /","  \\"],
+         ['_____']]
+
+resim_6=[[ "___________ "],
+         [ "|","   ","|"],
+         [ "|","   ","|"],
+         [ "|","   ",],
+         [ "|","   ",],
+         [ "|","   ",],
+         [ "|","   ",],
+         ['_____']]
+resim_5=[[ "___________ "],
+         [ "|","   ","|"],
+         [ "|","   ","|"],
+         [ "|","   ","O"],
+         [ "|","   ",],
+         [ "|","   ",],
+         [ "|","   ",],
+         ['_____']]
+resim_4=[[ "___________ "],
+         [ "|","   ","|"],
+         [ "|","   ","|"],
+         [ "|","   ","O"],
+         [ "|","   ","|"],
+         [ "|","   ","|"],
+         [ "|","   ",],
+         ['_____']]
+resim_3=[[ "___________ "],
+         [ "|","   ","|"],
+         [ "|","   ","|"],
+         [ "|","   ","O"],
+         [ "|","  /","|"],
+         [ "|","   ","|"],
+         [ "|","   ",],
+         ['_____']]
+resim_2=[[ "___________ "],
+         [ "|","   ","|"],
+         [ "|","   ","|"],
+         [ "|","   ","O"],
+         [ "|","  /","|","\\"],
+         [ "|","   ","|"],
+         [ "|","   ",],
+         ['_____']]
+resim_1=[[ "___________ "],
+         [ "|","   ","|"],
+         [ "|","   ","|"],
+         [ "|","   ","O"],
+         [ "|","  /","|","\\"],
+         [ "|","   ","|"],
+         [ "|","  /",],
+         ['_____']]
+
+
+
+#giris ekrani
+print(
+        """
+__________________________________________________________________
+ADAM ASMACA OYUNUNA HOSGELDINIZ
+DOGRU TAHMIN ICIN 6 ADET HAKKINIZ BULUNMAKTADIR.
+HARFLERI GIRINCE DOGRU HARFLER OTOMATIK YERINI BULUR.SIZE SADECE
+TAHMIN ETMEK KALIR.
+  ---------------IYI EGLENCELER-----------
+             _________
+             |      |
+             |      |
+             |     ***
+             |    *   *
+             |     ***
+             |     /|\\
+             |    / | \\         
+             |   /  |  \\
+             |     / \\
+             |    /   \\
+             |   /     \\   - - - - - -
+oyununuz basliyor.................           
+____________________________________________________________________       
+                               """,'\n')
+#Kelimeleri elle girmektense kayitli olanlarda secelim dedim
+
+sec=['ZONGULDAK','ARI','KANEPE','PORTAKAL','KEHRIBAR',
+     'LACIVERT','BEGONYA','ZIL','OYUNCAK','PENALTI']
+# oyunun kelimesini hazirlama
+while True:
+    oyun=input("Kelime secmek icin                                  CIKIS=Q"
+              "\nLutfen 0-9 arasi sayi giriniz:")
+    if oyun=='Q' or oyun=='q' :
+        break
+    
+    elif oyun.isdigit() and int(oyun) >10 :
+        print('------lutfen 0-9 arsinda rakam giriniz-------\n')
+        continue
+    elif oyun.isdigit() :
+        
+        liste=sec[int(oyun)]
+    
+        liste=liste.upper()
+        ekran=list(liste)
+        adam=list(len(ekran)*'-')
+    else:
+        print('---------Lutfen sayi giriniz-----------\n')
+        continue
+    sayac=6
+    i=0
+   #oyuna baslama  
+    while True:
+        
+        #6 hakki kullanmayi ayarlama ve ekran ciktisi
+        
+        if sayac==6:
+            for e in resim_6:
+                print(" "*20, *e,end="\n")
+                    
+            print('\n',' '*40,*adam)
+            print("\n                              ",sayac,"HAKKINIZ KALDI")
+        elif sayac==5:
+            for e in resim_5:
+                 print(" "*20, *e,end="\n")
+                   
+            print('\n',' '*40,*adam)
+            print("                              ",sayac,"HAKKINIZ KALDI")    
+       
+        elif sayac==4:
+            for e in resim_4:
+                print(" "*20, *e,end="\n")
+                   
+            print('\n',' '*40,*adam)
+            print("                              ",sayac,"HAKKINIZ KALDI")
+        elif sayac==3:
+            for e in resim_3:
+                print(" "*20, *e,end="\n")
+                   
+            print('\n',' '*40,*adam)
+            print("                              ",sayac,"HAKKINIZ KALDI")
+        elif sayac==2:
+            for e in resim_2:
+                print(" "*20, *e,end="\n")
+                   
+            print('\n',' '*40,*adam)
+            print("                              ",sayac,"HAKKINIZ KALDI")
+        elif sayac==1:
+            for e in resim_1:
+                print(" "*20, *e,end="\n")
+                   
+            print('\n',' '*40,*adam)
+            print("                              ",sayac,"HAKKINIZ KALDI")
+        elif sayac==0:
+            
+            for e in resim_0:
+            
+                print(" "*20,*e, end="\n")
+        
+                
+            print("\n                 UZGUNUM HAKKINIZ KALMADI")
+       
+            print('-------oyunu kaybettiniz ------')
+            print("Dogru cevap :",*ekran)
+            sayac=6
+            i=0
+            adam=list(len(ekran)*'-')
+            print('\n>>>>>>>>>>>>Simdi yeniden baslatiliyor...     ')
+            break
+       
+
+       #tahmin inputlari
+        
+        tahmin=input("cikis:Q"
+                     "\nLutfen Harf Giriniz:")
+        tahmin=tahmin.upper()
+       
+        if tahmin=='Q':
+            print('......GAME OVER......')
+            quit()
+        elif tahmin.isalpha()==False:
+            print('------Lutfen harf giriniz------')
+            continue
+        elif len(tahmin)>=2:
+            print('------Yalnizca harf giriniz------')
+            continue
+        else:
+            
+            i=0
+            for goster in ekran:
+                i+=1
+                    
+                if tahmin in goster :
+                    
+                    
+                    adam[i-1]=goster
+                    
+    # oyunun bitis ve basa donmesi
+        if ekran[:]==adam[:]:
+            print(*ekran,"\n>>>>>>>>>>>>>>>TEBRIKLER KAZANDINIZ>>>>>>>>>>>>>>>.")
+            sayac=6
+            i=0
+            adam=list(len(ekran)*'-')
+            print('\nsimdi yeniden baslatiliyor...     ','\n'*4)
+            break
+                
+        # 6 hak kontrolu    
+        elif tahmin not in  ekran:
+            sayac-=1
+            
+            continue
+       
+    
+    
+        
+    
+# 3 ======================TAHMIN OYUNU +2-2=======================================
+
+sec=['9675','1256','4762','3815','2768',
+     '7693','1874','5432','6341','84729']
+print(""" =============SAYI TAHMIN OYUNU=========================================
+4 HANELI, RAKAMLARI BIRBIRINDEN FARKLI, 0 OLMAYAN SAYINIZ  0-9 ARASINDA
+RAKAM SECEREK OTOMATIK YUKLERSINIZ.
+TAHMIN SAYISINI ASAGIDA DOGRULAMA KODLARI YARDIMIYLA BULMAYA CALISIN.
+  
+=======================IYI EGLENCELER====================================
+     """)
+
+# oyunun sayisini hazirlama
+while True:
+    oyun=input("sayi olusturmak icin                                  CIKIS=Q"
+              "\nLutfen 0-9 arasi sayi giriniz:")
+    if oyun=='Q' or oyun=='q' :
+        break
+    
+    elif oyun.isdigit() and int(oyun) >10 :
+        print('------lutfen 0-9 arsinda rakam giriniz-------\n')
+        continue
+    elif oyun.isdigit() :
+        
+        liste=sec[int(oyun)] #sayi secme
+        sayi=list(liste)     # listeye atama
+        ekran=list(4*"_")    # sayi ekrani
+        ekran_2=list()
+        ekran_2=['+','0','-','0']# dogruluk ekrani
+    
+        
+    else:
+        print('---------Lutfen sayi giriniz-----------\n')
+        continue
+#-------------------BU KISIM EGER EL ILE DEGER GIRERSEK---------------
+##sayi=1234
+##sayi=list(str(sayi))
+##ekran=list(4*"_")
+##ekran_2=['+','0','-','0')
+#---------------------------------------------------------------------
+    x_1=sayi[0]
+    x_2=sayi[1]
+    x_3=sayi[2]
+    x_4=sayi[3]
+    
+    print(x_1,x_2,x_3,x_4) #TAHMIN SAYISI EKRANDA GORUNECEK OYUNU TARIF ETTIKTEN SONRA PASIF YAPILABILIR.
+    while True:
+        # -----------ekran printleri--------------
+        print(" "*40,*ekran,'\n'*2)
+        
+        print(" "*40,*ekran_2,'\n'*3)
+        
+        #----------input---------------------------------------
+        tahmin=input("Baska bir sayi icin           'q'\n"
+                     "Lutfen 4 Haneli Tahmininizi yapin :")
+        ekran[:]=tahmin
+        ekran_2=['+','0','-','0']
+       
+        if tahmin=='q' or tahmin=='Q':
+            print('Ana menuye donuluyor.....')
+            break
+        #======olabilecek hatalari engelleme===================
+        elif tahmin.isnumeric()==False:
+            ekran=list(4*"_")
+            ekran_2=['+','0','-','0']
+            print('lutfen 4 haneli sayi giriniz')
+            continue
+        elif len(tahmin)!=4  :
+                print('lutfen 4 haneli sayi giriniz')
+                ekran=list(4*"_")
+                ekran_2=['+','0','-','0']
+                continue
+        #------------kazanma durumu-------------------------
+        elif ekran[:]==sayi[:]:
+            ekran_2=['+','4','-','0']
+            
+            print(" "*40,*sayi,'\n'*2)
+            print(" "*40,*ekran_2)
+            print('\n*****************TEBRIKLER KAZANDINIZ*******************\n')
+            print("\nyeni oyun basliyor...............\n")
+            ekran=list(4*"_")
+            ekran_2=['+','0','-','0']
+            break
+        else:
+            
+            y_1=tahmin[0]
+            y_2=tahmin[1]
+            y_3=tahmin[2]
+            y_4=tahmin[3]
+#=================farkli rakam-sifir kontrolu=======================
+        i=0
+        arti=0
+        eksi=0
+        for say in tahmin:
+            i+=1
+        
+            ayni_sayi=tahmin.count(say)
+            if ayni_sayi>=2:
+                ekran_2=['+','0','-','0']
+                ekran=list(4*"_")
+                print('lutfen rakamlari farkli sayi giriniz')
+                break
+            elif int(say)==0:
+               
+                print('lutfen 0 girmeyin')
+                break
+    #==============dogruluk kontrolu==================================        
+            elif say==x_1:
+                if y_1==x_1:
+                    arti+=1
+                    ekran_2[1]=arti
+                    
+                else :
+                    
+                    eksi+=1
+                    ekran_2[3]=eksi
+                    
+            elif say==x_2:
+                if y_2==x_2:
+                    arti+=1
+                    ekran_2[1]=arti
+                   
+                else :
+                    eksi+=1
+                    ekran_2[3]=eksi
+                    
+            elif say==x_3:
+                if y_3==x_3:
+                    
+                    arti+=1
+                    ekran_2[1]=arti
+                   
+                else :
+                    eksi+=1
+                    ekran_2[3]=eksi
+                   
+            elif say==x_4:
+                if y_4==x_4:
+                    arti+=1
+                    ekran_2[1]=arti
+                    
+                else :
+                    eksi+=1
+                    ekran_2[3]=eksi
+                
+           
+        
+
+# 4 =============================BONUS ODEV KOMBINASYON==================================
+
+a='0123456789'
+b='abcdefghik'
+rakam=list(a)
+alfabe=list(b)
+
+cikti_1=[]
+cikti_2=[]
+sayac=0
+#------------RAKAM VE ALFABEYI TEK TEK OKUMA---------------
+for say in rakam:
+   for oku in alfabe:
+        topla_1=say+oku #A0,B0......
+        topla_2=oku+say #0A,0B.......
+        
+        cikti_1.insert(sayac,topla_1)# [A0,B0,.....]
+        cikti_2.insert(sayac,topla_2)# [0A,0B,.....]
+        sayac+=1
+        
+print(cikti_1,"\n")
+print(cikti_2)
+        
+       
+       
